@@ -13,6 +13,26 @@
     
 </head>
 <body>
+    <style>
+        .under-const-cont{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    width: 400px;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.under-const-cont.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+    </style>
     <div class="all" id="all">
     <section>
     
@@ -328,7 +348,7 @@
             var blur = document.getElementById('all');
             blur.classList.add('active');
         }
-        setTimeout(undCon, 50000);
+        setTimeout(undCon, 5000);
 
         window.addEventListener('scroll',function(){
             const header = document.querySelector('header');
