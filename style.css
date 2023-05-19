@@ -781,6 +781,24 @@ footer p{
     margin-bottom: 24px;
     color: #222;
 }
+.under-const-cont{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    width: 400px;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.under-const-cont.active{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
 
 
 .about-des-sec{
@@ -1069,11 +1087,6 @@ footer p{
     .about-des-sec{
         flex-direction: column;
     }
-
-
-
-
-
     .desca-row{
         flex-wrap: wrap;
         flex-direction: column;
@@ -1098,9 +1111,6 @@ footer p{
         text-align: center;
         margin-top: 5%;
     }
-
-
-
     .pro-page-top{
         position: static;
         display: flex;
@@ -1111,15 +1121,11 @@ footer p{
     .pro-page-top input{
         vertical-align: top;
     }
-
-
     .prod-list{
         font-size: xx-small;
     }
     .ad-inq-container{
         font-size: xx-small;
     }
-    
-
-    
+  
 }

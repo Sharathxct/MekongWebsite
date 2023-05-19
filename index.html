@@ -298,6 +298,13 @@
             <input type="submit" class="heroin-btn" value="CONNECT">
         </form>
     </div>
+
+
+    <div class="under-const-cont" id="under-const-cont" style="min-height: 300px;display: flex; align-items: center;justify-content: center;">
+        <h4 >Website under construction please visit again</h4>
+    </div>
+
+
     <!-----------------javascript for menu--------------->
     <script>
         var navLinks = document.getElementById("navLinks");
@@ -315,6 +322,13 @@
         function hideMenu(){
             navLinks.style.left = "-200px";
         }
+        function undCon(){
+            var undcon = document.getElementById('under-const-cont');
+            undcon.classList.add('active');
+            var blur = document.getElementById('all');
+            blur.classList.add('active');
+        }
+        setTimeout(undCon, 50000);
 
         window.addEventListener('scroll',function(){
             const header = document.querySelector('header');
