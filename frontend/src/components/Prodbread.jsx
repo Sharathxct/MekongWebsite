@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'
+import { FaLessThanEqual } from 'react-icons/fa6';
 
 export default function Prodbread() {
     let count = 0;
@@ -23,6 +24,7 @@ export default function Prodbread() {
     const [data , setData]  = useState([]);
     const [Search , setSearch] = useState('');
     const [filter , setFilter] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(()=>{
         getData();
@@ -37,9 +39,9 @@ export default function Prodbread() {
 
     const getData = async () => {
         try{
-            const req = await fetch('http://localhost:3000/api/user/products')
+            const req = await fetch('https://mekong-website.vercel.app/api/user/products')
             const res = await req.json()
-            console.log(res)
+            setIsLoading(false)
             setData(res)
             setFilter(res)
         }
@@ -60,22 +62,25 @@ export default function Prodbread() {
                 </div>
             </div>
                 <div className='max-w-[90vw] mx-auto '>
-                    <DataTable
-                    columns={colomn}
-                    data={filter}
-                    pagination
-                    fixedHeader
-                    subHeader
-                    subHeaderComponent = {
-                        <input type='text' className='' 
-                        placeholder='Search...' 
-                        value={Search} 
-                        onChange={(e)=>{
-                             setSearch(e.target.value) 
+                    {
+                        isLoading ? (<h1>Loading...</h1>) : (<DataTable
+                            columns={colomn}
+                            data={filter}
+                            pagination
+                            fixedHeader
+                            subHeader
+                            subHeaderComponent = {
+                                <input type='text' className='' 
+                                placeholder='Search...' 
+                                value={Search} 
+                                onChange={(e)=>{
+                                     setSearch(e.target.value) 
+                                    }
+                                }  />
                             }
-                        }  />
+                            />)
                     }
-                    />
+                    
                 </div>
                 
     

@@ -30,7 +30,7 @@ export default function Navbar({ nItem }) {
     
     { link: "Services", path: "service" },
     { link: "About", path: "About" },
-    { link: "FAQ", path: "faq" },
+    { link: "Read", path: "faq" },
   ];
   return (
     <header className="w-full bg-white md:bd-transparent fixed top-0 left-0 right-0">
@@ -107,6 +107,7 @@ export default function Navbar({ nItem }) {
             isMenuOpen ? "block fixed top-0 right-0  left-0" : "hidden"
           } `}
         >
+            <RLink to='/product' className="block text-base text-white hover:text-brandPrimary first:font-medium " >Producst</RLink>
           {navItem.map((item, index) => (
             <Link
               to={item.path}
