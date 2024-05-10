@@ -3,11 +3,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const UserRouter = require('./Routes/user');
+const dotenv = require('dotenv')
+
+dotenv.config();
 
 const app = express();
 
-const dbURI = 'mongodb+srv://pharmamekong:passwordformekong@cluster0.fspvpfz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
-// const dbURI = 
+const dbURI = process.env.DBURI
 
 mongoose.connect(dbURI)
   .then(result => app.listen(3000))
