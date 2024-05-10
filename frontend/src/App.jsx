@@ -5,6 +5,7 @@ import DashBoard from "./pages/DashBoard"
 import Product from "./pages/Product"
 import Login from "./pages/Login"
 import { useAuthContext } from "./hooks/useAuthContext"
+import Notfound from "./components/Notfound"
 
 function App() {
   const {user} = useAuthContext()
@@ -13,10 +14,12 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" Component={Home} ></Route>
-          <Route path="/admin" element={user ? <DashBoard/> : <Navigate to='/login'/>} ></Route>
-          <Route path="/product" Component={Product} ></Route>
-          <Route path="/login" element={user ? <Navigate to='/admin' /> : <Login />}></Route>
+          <Route path="/MekongWebsite/" Component={Home} ></Route>
+          <Route path="/MekongWebsite/admin" element={user ? <DashBoard/> : <Navigate to='/login'/>} ></Route>
+          <Route path="/MekongWebsite/product" Component={Product} ></Route>
+          <Route path="/MekongWebsite/login" element={user ? <Navigate to='/admin' /> : <Login />}></Route>
+
+          <Route path="*" Component={Notfound}  ></Route>
         </Routes>
       </BrowserRouter>
     </>
