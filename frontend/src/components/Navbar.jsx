@@ -43,7 +43,7 @@ export default function Navbar({ nItem }) {
       >
         <div className="flex justify-between items-center text-base gap-8">
           <RLink
-            to="/MekongWebsite/"
+            to="/"
             className="text-2xl font-semibold flex items-center space-x-3"
           >
             <img
@@ -55,7 +55,7 @@ export default function Navbar({ nItem }) {
           </RLink>
           {/* Nav items for large devices */}
           <ul className="md:flex space-x-12 hidden">
-          <RLink to="/MekongWebsite/product">Products</RLink>
+          <RLink to="/product">Products</RLink>
             {nItem !== undefined
               ? nItem.map((item, index) => (
                   <RLink
