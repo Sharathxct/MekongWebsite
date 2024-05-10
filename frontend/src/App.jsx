@@ -15,9 +15,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/MekongWebsite/" Component={Home} ></Route>
-          <Route path="/MekongWebsite/admin" element={user ? <DashBoard/> : <Navigate to='/login'/>} ></Route>
+          <Route path="/MekongWebsite/admin" element={user ? <DashBoard/> : <Navigate to='/MekongWebsite/login'/>} ></Route>
           <Route path="/MekongWebsite/product" Component={Product} ></Route>
-          <Route path="/MekongWebsite/login" element={user ? <Navigate to='/admin' /> : <Login />}></Route>
+          <Route path="/MekongWebsite/login" element={user ? <Navigate to='/MekongWebsite/admin' /> : <Login />}></Route>
 
           <Route path="*" Component={Notfound}  ></Route>
         </Routes>
