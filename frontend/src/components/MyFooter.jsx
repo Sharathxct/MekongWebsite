@@ -1,6 +1,7 @@
 import React from 'react'
-import { Footer } from "flowbite-react";
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
+import { Footer } from 'flowbite-react';
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
+import MekLogo from '../assets/icons/MekongLogo.svg'
 
 
 export default function MyFooter() {
@@ -11,8 +12,8 @@ export default function MyFooter() {
           <div>
             <Footer.Brand
               href="/"
-              src="src/assets/icons/MekongLogo.svg"
-              alt="Flowbite Logo"
+              src={MekLogo}
+              alt="Mekong Logo"
               name="MEKONG"
             />
           </div>
