@@ -1,10 +1,13 @@
 import React from 'react'
+import { TbBuildingFactory2 } from "react-icons/tb";
+import { GiMicroscope } from "react-icons/gi";
+import { SlChemistry } from "react-icons/sl";
 
 export default function Services() {
     const services = [
-        {id : 1, title : 'CDMO & CMO', description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', image : 'src/assets/factory.png' },
-        {id : 2, title : 'Research Development', description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', image : 'src/assets/research.png' },
-        {id : 3, title : 'Drug Discovery', description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', image : 'src/assets/drugDisc.png' },
+        {id : 1, title : 'CDMO & CMO', description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', image : <TbBuildingFactory2 className='w-full h-full'/> },
+        {id : 2, title : 'Research Development', description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', image : <GiMicroscope className='w-full h-full' /> },
+        {id : 3, title : 'Drug Discovery', description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', image : <SlChemistry className='w-full h-full'/> },
     ]
   return (
     <div className='md:px-14 px-4 py-16 max-w-screen-2xl mx-auto' id="service" >
@@ -33,7 +36,7 @@ export default function Services() {
                     services.map(service => <div key={service.id} className='px-4 py-8 text-center md:w-[300px] mx-auto md:h-80 rounded-md shadow cursor-pointer hover:-translate-y-5 hover:border-b-4 hover:border-indigo-700 transition-all duration-300 flex items-center justify-center h-full  '>
                         <div>
                             <div className='bg-[#E8F5E9] mb-4 h-14 w-14 mx-auto rounded-tl-3xl rounded-br-3xl ' >
-                                <img src={service.image} alt="" className='-ml-5' />
+                                {service.image}
                             </div>
                             <h4 className='text-2xl font-bold text-neutralDGrey mb-2 px-2' >{service.title}</h4>
                             <p className='text-sm text-neutralGrey'>{service.description}</p>
